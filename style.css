@@ -1,0 +1,170 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #3A8F71;
+    color: white;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: slideIn 0.6s ease forwards;
+}
+
+header h2,
+.beverages h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    animation: slideUp 0.8s ease forwards;
+}
+
+.menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 20px;
+    width: 260px;
+    padding: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInCard 1s ease forwards;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.3rem;
+    color: #3A8F71;
+}
+
+.card p {
+    font-size: 0.9rem;
+    min-height: 40px;
+    color: #555;
+}
+
+.price {
+    display: inline-block;
+    margin-top: 10px;
+    background: #3A8F71;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover .price {
+    background-color: #2b6e56;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInCard {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Responsive */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
